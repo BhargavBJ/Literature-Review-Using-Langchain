@@ -1,0 +1,36 @@
+Title: Handling Cold-Start Collaborative Filtering with Reinforcement Learning
+
+Okay, here's a summary of the research paper, broken down by section:
+
+**Abstract:**
+
+*   The paper addresses the cold-start problem in recommender systems, specifically for new users.
+*   It proposes using Deep Q-Networks (DQN) to learn an optimal sequence of questions to ask cold-start users in a movie recommender system to create user profiles.
+*   The DQN model aims to generalize across different types of recommender systems.
+
+**Introduction:**
+
+*   Recommender systems use various methods like collaborative filtering, content-based filtering, and hybrid approaches to suggest movies.
+*   A major challenge is the cold-start problem, where there's a lack of information about new users.
+*   The paper proposes using deep reinforcement learning to learn an optimal interview process, where the system dynamically generates questions to maximize information gain based on user responses.
+*   This is presented as the first work using reinforcement learning for this kind of adaptive interview process.
+
+**Methodology:**
+
+*   The system uses Bayesian Probabilistic Matrix Factorization (BPMF) to create movie embeddings from existing user ratings.
+*   A Deep Q-Network (DQN) is used to generate interview questions of the form "Do you like λ?", where λ is a movie. Users respond with a rating (1-5) or indicate they haven't seen the movie (rating 0).
+*   The DQN dynamically generates subsequent questions based on previous answers.
+*   After the interview, the question-answer pairs are fed into a multilayer perceptron (MLP) to generate a predicted user embedding.
+*   Movie ratings are predicted using a function of user and movie embeddings.
+*   The DQN's state is a representation of the question-answer pairs. The action space is the set of all movies.
+*   The DQN is trained using the inverse of the Root Mean Squared Error (RMSE) of the movie rating predictions as the reward. A modified Q-function update prevents repeating questions.
+*   The MLP is trained in two ways: (1) using user embeddings from the BPMF model as the true value, and (2) directly on user's actual movie ratings.
+
+**Results:**
+
+*   The paper does not include any results.
+
+**Conclusion:**
+
+*   The paper does not include a conclusion.
+*   The paper mentions that this is work in progress.

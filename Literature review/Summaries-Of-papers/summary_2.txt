@@ -1,0 +1,23 @@
+Title: A unified strategy for implementing curiosity and empowerment driven reinforcement learning
+
+Okay, here's a summary of the research paper, broken down by section:
+
+**Abstract:**
+
+The paper proposes a unified strategy for reinforcement learning agents using both curiosity and empowerment as intrinsic motivations. It suggests that controlling the information flow between the agent and the environment is key to autonomy. Curiosity rewards the agent for relevant actions, while empowerment measures the agent's potential to control its future by quantifying the information flow from the agent to the environment. The paper shows how a shared internal model facilitates training of the empowerment function, and discusses future research.
+
+**Introduction:**
+
+The paper addresses the problem of combining multiple intrinsic motivations in reinforcement learning.  It argues that by optimizing the information flow between the agent and the environment, the agent can learn to sense and act in a way that mimics being rewarded by specific intrinsic reward functions. This general formulation could lead to more autonomous and adaptable agents capable of multi-task learning and transfer learning.  The paper's contribution is a proposed method for computing the state of information flow, quantifying information gain and empowerment at each step.
+
+**Methodology:**
+
+The paper uses a standard reinforcement learning setup where an agent interacts with a Markovian environment. It leverages recursive expressions from previous research (Tiomkin and Tishby, 2017) to describe the information transferred between the environment and the agent, and vice versa. These expressions, similar in structure to the Bellman equation, are then used to derive rewards based on maximizing information flow in both directions (environment to agent = curiosity; agent to environment = empowerment). The paper highlights the need to approximate conditional mutual information to compute these rewards, which is difficult with continuous state and action spaces.
+
+**Results:**
+
+The provided text does not contain a Results section.
+
+**Conclusion:**
+
+The provided text does not contain a Conclusion section. The paper mentions that the discussion section will summarize main results, limitations, and future directions, but this section is not included in the provided text.

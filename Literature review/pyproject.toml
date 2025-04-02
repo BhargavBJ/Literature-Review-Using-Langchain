@@ -1,0 +1,20 @@
+[project]
+name = "literature-review"
+version = "0.1.0"
+description = "This project aims to fetch papers from paperswithcode.com, download it and summarizes it using gemini and langchain"
+authors = [
+    {name = "BhargavBJ",email = "bjbhargav60@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9,<4.0"
+dependencies = [
+    "langchain-google-genai (>=2.1.2,<3.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "pymupdf (>=1.25.5,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

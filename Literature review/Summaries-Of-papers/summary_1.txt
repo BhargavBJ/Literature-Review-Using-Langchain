@@ -1,0 +1,19 @@
+Title: Learning from Outside the Viability Kernel: Why we Should Build Robots that can Fall with Grace
+
+Okay, here's a summary of the paper based on the provided text, broken down by section:
+
+**Abstract:**
+The paper addresses the challenge of applying reinforcement learning (RL) to robotics, where reward landscapes often lack informative gradients. It argues that the choice of initial robot states significantly impacts the reward landscape and demonstrates the counter-intuitive benefit of including initial states that are "unviable" (doomed to fail).
+
+**Introduction:**
+Recent advances in reinforcement learning (RL) have been difficult to transfer into learning directly in robot hardware. Most RL in robotics is model-based and uses highly informative reward functions. The main challenge is that the reward landscape tends to be flat, providing no informative gradient. The paper proposes that the choice of state initialization can have a greater effect on the reward landscape than is usually assumed. The paper argues that initializing from states outside the viability kernel can be beneficial for model-free learning.
+
+**Methodology:**
+The research uses the spring-loaded inverted pendulum (SLIP) model, a simplified model of legged locomotion.  The model's dynamics are analyzed using Poincar´e return maps, reducing the state to a single variable: normalized hopping height at apex. The transition matrix is computed by brute force simulation of a finely discretized grid over state and action space, which is then used to compute a difference in state and visualize the result.
+
+**Results:**
+The key result is visualized in Figure 2, showing how different state-action pairs (normalized height and landing angle) affect the subsequent apex height. The figure highlights regions where the robot falls (grey), regions where actions lead to higher or lower apex heights, and regions where the apex height remains constant.
+
+**Conclusion:**
+(This section is not explicitly present in the provided text, so I will base it on the overall argument of the paper.)
+The paper suggests that initializing RL agents from states outside the viability kernel (states where failure is likely) can improve learning, despite the initial intuition that such states are detrimental. Future research could explore how to effectively incorporate these "failure states" into RL algorithms for robotics, potentially leading to more robust and efficient learning of control policies.
