@@ -9,8 +9,8 @@ PWC_API_KEY = os.getenv("PWC_API_KEY")
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", 
                              google_api_key=os.getenv("GOOGLE_API_KEY"))
 
-DOWNLOAD_DIR = r"D:\Literature review\Downloaded-Papers"
-SUMMARY_DIR = r"D:\Literature review\Summaries-Of-papers"
+DOWNLOAD_DIR = r"Path"
+SUMMARY_DIR = r"Path"
 
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 os.makedirs(SUMMARY_DIR, exist_ok=True)
