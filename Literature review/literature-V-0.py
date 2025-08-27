@@ -1,3 +1,6 @@
+# This version has been deprecated since paperswithcode.com has been removed entrely and the link directly goes to hugging face
+# Please do refer literature- V-1.py for the same functionality but with core api which also happens to be the largest open source library for journals and papers.
+
 import os
 import requests
 import fitz  
@@ -113,3 +116,4 @@ def process_papers(query):
         print(f" Summary saved to: {text_path}")
 
 process_papers("Reinforcement learning")
+
