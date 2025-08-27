@@ -1,7 +1,7 @@
 import os
 import time
 import requests
-import fitz  # PyMuPDF
+import fitz  
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 
@@ -12,8 +12,8 @@ load_dotenv()
 token = os.getenv("CORE_API")  # renamed as requested
 llm = ChatGroq(model="openai/gpt-oss-20b", groq_api_key=os.getenv("GROQ_API_KEY"))
 
-DOWNLOAD_DIR = r"D:\Literature review\downloaded"
-SUMMARY_DIR = r"D:\Literature review\summaries"
+DOWNLOAD_DIR = r"Path"
+SUMMARY_DIR = r"Path"
 
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 os.makedirs(SUMMARY_DIR, exist_ok=True)
@@ -187,4 +187,5 @@ def process_papers(query):
 # Run
 # ===============================
 if __name__ == "__main__":
-    process_papers("Multi Agentic Systems In Education")
+    process_papers("Whatever topic you want to research and study on")
+
