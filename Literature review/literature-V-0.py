@@ -115,5 +115,6 @@ def process_papers(query):
 
         print(f" Summary saved to: {text_path}")
 
-process_papers("Reinforcement learning")
+process_papers("Topic: Enter the topic you want to research on")
+
 
