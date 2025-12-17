@@ -5,9 +5,7 @@ import fitz
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 
-# ===============================
 # Load ENV
-# ===============================
 load_dotenv()
 token = os.getenv("CORE_API")  # renamed as requested
 llm = ChatGroq(model="openai/gpt-oss-20b", groq_api_key=os.getenv("GROQ_API_KEY"))
@@ -17,11 +15,8 @@ SUMMARY_DIR = r"Path"
 
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 os.makedirs(SUMMARY_DIR, exist_ok=True)
-
-
-# ===============================
 # CORE API fetch
-# ===============================
+
 def get_papers_core(query, num_papers=10, retries=3):
     url = f"https://api.core.ac.uk/v3/search/works/?q={query}&limit={num_papers}"
     headers = {"Authorization": f"Token {token}"}
@@ -57,9 +52,7 @@ def get_papers_core(query, num_papers=10, retries=3):
     return []
 
 
-# ===============================
 # arXiv fallback
-# ===============================
 def get_papers_arxiv(query, num_papers=10):
     url = f"http://export.arxiv.org/api/query?search_query=all:{query}&start=0&max_results={num_papers}"
     response = requests.get(url)
@@ -85,10 +78,7 @@ def get_papers_arxiv(query, num_papers=10):
 
     return papers
 
-
-# ===============================
 # Download PDF
-# ===============================
 def download_pdf(pdf_url, save_path):
     try:
         response = requests.get(pdf_url, stream=True, timeout=15)
@@ -115,10 +105,7 @@ def extract_text_from_pdf(pdf_path):
         print(f" Error reading PDF: {pdf_path} - {e}")
         return ""
 
-
-# ===============================
 # Summarization
-# ===============================
 def generate_summary(pdf_text):
     prompt = f"""
     Summarize the following research paper by extracting key points from each section:
@@ -149,9 +136,7 @@ def generate_summary(pdf_text):
     return result.content
 
 
-# ===============================
 # Main Processing
-# ===============================
 def process_papers(query):
     papers = get_papers_core(query)
     if not papers:
@@ -183,9 +168,8 @@ def process_papers(query):
         print(f"Summary saved to: {text_path}")
 
 
-# ===============================
 # Run
-# ===============================
 if __name__ == "__main__":
     process_papers("Whatever topic you want to research and study on")
+
 
